@@ -1,0 +1,123 @@
+% LaTeX Article Template - customizing page format
+%
+% LaTeX document uses 10-point fonts by default.  To use
+% 11-point or 12-point fonts, use \documentclass[11pt]{article}
+% or \documentclass[12pt]{article}.
+\documentclass{article}
+
+% Set left margin - The default is 1 inch, so the following 
+% command sets a 1.25-inch left margin.
+\setlength{\oddsidemargin}{0.25in}
+
+% Set width of the text - What is left will be the right margin.
+% In this case, right margin is 8.5in - 1.25in - 6in = 1.25in.
+\setlength{\textwidth}{6in}
+
+% Set top margin - The default is 1 inch, so the following 
+% command sets a 0.75-inch top margin.
+\setlength{\topmargin}{-0.25in}
+
+% Set height of the text - What is left will be the bottom margin.
+% In this case, bottom margin is 11in - 0.75in - 9.5in = 0.75in
+\setlength{\textheight}{8in}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {./} }
+\setlength{\parskip}{5pt} 
+\pagestyle{fancyplain}
+% Set the beginning of a LaTeX document
+\begin{document}
+
+\lhead{Drew Remmenga MATH 458}
+\rhead{HW \#1}
+%\lhead{Independent Study}
+%\rhead{R Lab}
+
+\begin{enumerate}
+
+\item 
+The group is not closed. The group contains no identity.
+\item
+\begin{enumerate}
+\item Closure. Let $A,B \in SL(2,\mathbb{R})$ and $A \circ B = C$. Then $det(C)=det(AB) = det(A)det(B)=1$ thus $C \in SL(2,\mathbb{R})$
+\item Associativity. Suppose $A,B,C \in SL(2,\mathbb{R})$ then $A \circ (B \circ C) = (A \circ B) \circ C$ and then $det(A)det(BC)=det(AB)det(C) = det(A)det(B)det(C)=1$ so closure holds.
+\item Identity. Let the identity be the 2x2 unit matrix ($e$). $det(e)=1$ so $e \in SL(2,\mathbb{R})$.
+\item Inverse. Suppose $\exists A^{-1},A \in SL(2,\mathbb{R})$ such that $A \circ A^{-1} = A^{-1} \circ A = e$. Then we have $det(A \circ A^{-1}) = det(A^{-1}) = det(e) =1$. So $A^{-1}\in SL(2,\mathbb{R})$.
+\end{enumerate}
+\item
+\[
+    \begin{array}{l|*{4}{l}}
+        & e   & a   & b & c  \\
+    \hline
+    e & e & a & b & c  \\
+    a & a & b & c & e  \\
+    b & b & c & e & a\\
+    c & c & e & a & b  \\
+    \end{array} 
+\]
+
+\[
+    \begin{array}{l|*{4}{l}}
+        & e   & a   & b & c  \\
+    \hline
+    e & e & a & b & c  \\
+    a & a & e & c & b  \\
+    b & b & c & a & e\\
+    c & c & b & e & a  \\
+    \end{array} 
+\]
+
+\[
+    \begin{array}{l|*{4}{l}}
+        & e   & a   & b & c  \\
+    \hline
+    e & e & a & b & c  \\
+    a & a & c & e & b  \\
+    b & b & e & c & a\\
+    c & c & b & a & e  \\
+    \end{array} 
+\]
+
+\[
+    \begin{array}{l|*{4}{l}}
+        & e   & a   & b & c  \\
+    \hline
+    e & e & a & b & c  \\
+    a & a & e & c & b  \\
+    b & b & c & e & a\\
+    c & c & b & a & e  \\
+    \end{array} 
+\]
+\item
+If $xy = zx$ implies $y=z$ then $xz =zx$ and $xy = yx$ for $\forall x,y,z \in G$ therefore the group $G$ is abelian.
+\item
+For n=0 the case is trivial and becomes the identity. Consider n+1 case. Then we have: 
+\begin{equation*}
+\begin{split}
+(a^{-1}ba)^{n+1} &= a^{-1}b^{n+1}a \\
+a^{-n-1}b^{n+1}a^{n+1} &= a^{-1}b^{n+1}a \\
+a^{-1}b^{n+1}a^{1} &= a^{-1}b^{n+1}a\\
+a^{-1}b^{n+1}a &= a^{-1}b^{n+1}a\\
+\end{split}
+\end{equation*}
+Then consider the n-1 case. Then we have:
+\begin{equation*}
+\begin{split}
+(a^{-1}ba)^{n-1} &= a^{-1}b^{n-1}a\\
+a^{-n+1}b^{n-1}a^{n-1} &= a^{-1}b^{n-1}a\\
+a^{1}b^{n-1}a^{-1} &= a^{-1}b^{n-1}a\\
+a^{-1}b^{n+1}a &= a^{-1}b^{n+1}a\\
+\end{split}
+\end{equation*}
+
+\end{enumerate}
+
+
+
+
+\end{document}
